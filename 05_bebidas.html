@@ -7,11 +7,20 @@
     */
 
     //Entrada
+    let bebidas = ["Cerveja", "Vinho", "Suco Natural", "Tequila", "Água", "Refrigerante", "Vodka"];
+    let sem = [];
+    let com = [];
 
-
-    //Processamento
-
+    for (let itens of bebidas) {
+        const bebida = prompt(itens +` essa bebida contém álcool?`).toUpperCase();
+        if(bebida == "S"){
+            com.push(itens)
+        }
+        else{
+            sem.push(itens)
+        }
+    }
 
     //Saída
-
+    alert(`Bebidas sem álcool: ${sem.join(", ")} \nBebidas com álcool: ${com.join(", ")}`)
 </script>
