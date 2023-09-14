@@ -10,14 +10,21 @@
     //Entrada
     let cores = ["Branco", "Azul", "Marrom", "Cinza", "Verde", "Amarelo", "Vermelho", "Preto"];
     let fav = [];
+    let notFav = [];
+    let quant = 0;
     //Processamento
     for (let itens of cores) {
         const corFav = prompt(`você gosta dessa cor: ${itens}, Responda com s-sim ou n-não`).toUpperCase();
         if(corFav == "S"){
-
+            fav.push(itens);
+            quant++;
         }
+        else{
+            notFav.push(itens);
+        }
+
     }
 
     //Saída
-
+    alert(`Cores preferidas: ${fav.join(" - ")} \nCores restantes: ${notFav.join(" - ")} \nQuantidade de cores que o usuário gosta: ${quant}`);
 </script>

@@ -8,11 +8,50 @@
     */
 
     //Entrada
-
-
+    let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+    let sc = [];
+    let rs = [];
+    let pr = [];
+    let numSC = 0;
+    let numRS = 0;
+    let numPR = 0;
     //Processamento
-
+    for (let itens of cidades) {
+        const estados = prompt(`Qual estado essas cidades pertecem: ${itens}, Responda SC-Santa Catarina, RS-Rio Grande do Sul e PR-Paraná.`).toUpperCase();
+        if (estados == "SC") {
+            sc.push(itens);
+            numSC++; 
+        }
+        else if (estados == "RS") {
+            rs.push(itens);
+            numRS++;
+        }
+        else {
+            pr.push(itens);
+            numPR++;
+        }
+    }
 
     //Saída
-
+    if (numPR > numRS && numRS > numSC) {
+        alert(`Paraná: ${pr} \nQuantidade: ${numPR} \nRio Grande do Sul: ${rs} \nQuantidade : ${numRS} \nSanta Catarina: ${sc} \nQuantidade: ${numSC}`);
+    }
+    else if (numSC > numRS && numRS > numPR) {
+        alert(`Santa Catarina: ${sc} \nQuantidade: ${numSC} \nRio Grande do Sul: ${rs} \nQuantidade : ${numRS} \nParaná: ${pr} \nQuantidade: ${numPR}`);
+    }
+    else if (numRS > numSC && numSC > numPR) {
+        alert(`Rio Grande do Sul: ${rs} \nQuantidade : ${numRS} \nSanta Catarina: ${sc} \nQuantidade: ${numSC} \nParaná: ${pr} \nQuantidade: ${numPR}`);
+    }
+    else if (numPR > numSC && numSC > numRS) {
+        alert(`Paraná: ${pr} \nQuantidade: ${numPR} \nSanta Catarina: ${sc} \nQuantidade: ${numSC} \nRio Grande do Sul: ${rs} \nQuantidade : ${numRS}`);
+    }
+    else if (numSC > numPR && numPR > numRS) {
+        alert(`Santa Catarina: ${sc} \nQuantidade: ${numSC} \nParaná: ${pr} \nQuantidade: ${numPR} \nRio Grande do Sul: ${rs} \nQuantidade : ${numRS}`);
+    }
+    else if (numRS > numPR && numPR > numSC) {
+        alert(`Rio Grande do Sul: ${rs} \nQuantidade : ${numRS} \nParaná: ${pr} \nQuantidade: ${numPR} \nSanta Catarina: ${sc} \nQuantidade: ${numSC}`);
+    }
+    else{
+        alert(`Santa Catarina: ${sc} \nQuantidade: ${numSC} \nRio Grande do Sul: ${rs} \nQuantidade : ${numRS} \nParaná: ${pr} \nQuantidade: ${numPR}`);
+    }
 </script>
